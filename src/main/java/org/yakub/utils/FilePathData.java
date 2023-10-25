@@ -81,3 +81,8 @@ public class FilePathData {
     }
 
 }
+// Primitive Type ile Wrapper Type arasındaki farklar ?
+// Heap memory ile Stack memory nedir arasındaki farklar ?
+// String neden primitive Type'dır ?
+// Compiler Interpreter nedir ?
+// Java 8 ile gelen stream seri ve paralel nedir ?
