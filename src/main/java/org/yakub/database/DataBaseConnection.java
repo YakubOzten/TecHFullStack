@@ -50,13 +50,23 @@ public  static  DataBaseConnection getInstance(){
     }
     return instance;
 }
-    @Override
+
+
+     public Connection getConnection() {
+         return connection;
+     }
+
+     public void setConnection(Connection connection) {
+         this.connection = connection;
+     }
+
+     @Override
     public void databaseInfo() {
         System.out.println("Database Information: " + super.getUrl() + " " + super.getFornameData() + " " + super.getPassword() + " " + super.getUser());
     }
 
      public static void main(String[] args) {
-         DataBaseConnection databaseConnection = new DataBaseConnection();
+         //DataBaseConnection databaseConnection = new DataBaseConnection();
      }
 
 
