@@ -15,6 +15,7 @@ public class RegisterDto extends  BaseDto implements Serializable {
     private String uNickName;
     private String uEmailAddress;
     private String uPassword;
+    private  String rolles;
     private int remainingNumber;
     private Boolean isPassive;
 
@@ -22,22 +23,24 @@ public class RegisterDto extends  BaseDto implements Serializable {
     public  RegisterDto(){
     }
     // Constructor (parametreli)
-    public RegisterDto(String uNickName, String uEmailAddress, String uPassword,int remainingNumber,Boolean isPassive) {
+    public RegisterDto(String uNickName, String uEmailAddress, String uPassword,int remainingNumber,Boolean isPassive,String rolles) {
         this.uNickName = uNickName;
         this.uEmailAddress = uEmailAddress;
         this.uPassword = uPassword;
         this.remainingNumber = remainingNumber;
         this.isPassive = isPassive;
+        this.rolles=rolles;
     }
     // Constructor (parametreli)
     // Overloadinng
-    public RegisterDto(Long id, Date systemCreatedDate, String uNickName, String uEmailAddress, String uPassword,int remainingNumber,Boolean isPassive) {
+    public RegisterDto(Long id, Date systemCreatedDate, String uNickName, String uEmailAddress, String uPassword,int remainingNumber,Boolean isPassive,String rolles) {
         super(id, systemCreatedDate);
         this.uNickName = uNickName;
         this.uEmailAddress = uEmailAddress;
         this.uPassword = uPassword;
         this.remainingNumber = remainingNumber;
         this.isPassive = isPassive;
+        this.rolles=rolles;
     }
     // GETTER AND SETTER
 
@@ -80,6 +83,14 @@ public class RegisterDto extends  BaseDto implements Serializable {
     public void setPassive(Boolean passive) {
         isPassive = passive;
     }
+
+    public String getRolles() {
+        return rolles;
+    }
+
+    public void setRolles(String rolles) {
+        this.rolles = rolles;
+    }
     //ToString
 
 
@@ -93,6 +104,7 @@ public class RegisterDto extends  BaseDto implements Serializable {
                 ", isPassive=" + isPassive +
                 ", id=" + id +
                 ", systemCreatedDate=" + systemCreatedDate +
+                ", rolles='" + rolles + '\'' +
                 '}';
     }
 }

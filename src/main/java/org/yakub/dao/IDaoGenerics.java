@@ -16,15 +16,17 @@ public interface IDaoGenerics <T>{
 
     // FIND BY ID
     public T findById(Long id);
+    public T findByEmail(String email);
 
     // LIST
         public ArrayList<T> list();
 
     // UPDATE
     public T update(Long id,T t);
+    public RegisterDto updateRemaing(Long id, T t);
 
     // DELETE
-    public T delete(RegisterDto registerDto);
+    public T deleteById(RegisterDto registerDto);
 
     ////////////////////////////////////////
     // interface Gövdeli yapmak istiyorsak; default yazacağız.
