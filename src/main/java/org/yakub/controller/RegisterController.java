@@ -38,7 +38,7 @@ public class RegisterController implements IDaoGenerics<RegisterDto> {
 
     @Override
     public RegisterDto findByEmail(String email) {
-        return null;
+        return registerDao.findByEmail(email);
     }
 
     // LIST
@@ -54,12 +54,12 @@ public class RegisterController implements IDaoGenerics<RegisterDto> {
 
     @Override
     public RegisterDto updateRemaing(Long id, RegisterDto registerDto) {
-        return null;
+        return registerDao.updateRemaing(id,registerDto);
     }
     // DELETE
     @Override
     public RegisterDto deleteById(RegisterDto registerDto) {
-        return null;
+        return registerDao.deleteById(registerDto);
     }
 
 

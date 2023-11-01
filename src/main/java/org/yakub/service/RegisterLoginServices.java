@@ -280,7 +280,7 @@ public class RegisterLoginServices {
         RegisterDto registerDto = new RegisterDto();
         String uNickname, uEmailAddress, uPassword, rolles;
         Long id;
-        Integer remainingNumber;
+        int remainingNumber;
         Boolean isPassive;
         System.out.println("Güncellemek istediğiniz ID  giriniz");
         id = klavye.nextLong();

@@ -89,7 +89,7 @@ public class RegisterDao implements IDaoGenerics<RegisterDto>{
         try(Connection connection=getInterfaceConnection()){
             // transaction: ya hep ya hiç kuralıdır.
             connection.setAutoCommit(false); // default:true
-             String sql="INSERT INTO public.register (nickname,email_address,password,roles,remaining_number,is_passive) VALUES (?,?,?,?,?,?)";
+             String sql="INSERT INTO public.register (nick_name,email_address,password,roles,remaining_number,is_passive) VALUES (?,?,?,?,?,?)";
             PreparedStatement preparedStatement=connection.prepareStatement(sql);
             preparedStatement.setString(1,registerDto.getuNickName());
             preparedStatement.setString(2,registerDto.getuEmailAddress());
@@ -150,7 +150,7 @@ public class RegisterDao implements IDaoGenerics<RegisterDto>{
         RegisterDto registerDto=null;
         try (Connection connection=getInterfaceConnection()) {
             // Dikkat: email_address String olduğu için tırnak içinde yazıyoruz örneğin: email="hamitmizrak@gmail.com"
-            String sql="SELECT * FROM public.register where email_address='"+email+"\'";
+            String sql="SELECT * FROM public.register where email_address='" + email + "'";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             // executeUpdate() [create, delete, update]
             // Sorgularda  : executeQuery [list, find]
@@ -220,7 +220,7 @@ public class RegisterDao implements IDaoGenerics<RegisterDto>{
             try(Connection connection= getInterfaceConnection()) {
                 // transaction: ya hep ya hiç kuralıdır.
                 connection.setAutoCommit(false);
-                String sql="UPDATE public.register SET nick_name=?,email_adress=?,password=?,roles=?,remaining_number=?,is_passive=? WHERE id=?";
+                String sql="UPDATE public.register SET nick_name=?,email_address=?,password=?,roles=?,remaining_number=?,is_passive=? WHERE id=?";
                 PreparedStatement preparedStatement=connection.prepareStatement(sql);
                 preparedStatement.setString(1,registerDto.getuNickName());
                 preparedStatement.setString(2, registerDto.getuEmailAddress());
